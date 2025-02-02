@@ -7,5 +7,14 @@
 </head>
 <body>
     payment successful.
+    @if ($orders)
+
+    @foreach ($orders as $order)
+      {{ $order }}
+    @endforeach
+    
+    @endif
+
+    {{ 'you are a guest user' }}
 </body>
 </html>

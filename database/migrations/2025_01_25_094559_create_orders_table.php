@@ -20,6 +20,7 @@ return new class extends Migration
             $table->decimal('total_amount');
             $table->string('status');
             $table->string('session_id');
+            $table->string('order_identification', 255);
             $table->timestamps();
         });
     }

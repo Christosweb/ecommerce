@@ -34,7 +34,7 @@
                     <div class="card-actions">
                     <span class="quantity hidden">1</span>
                         <button class="btn btn-primary buy">Buy Now</button>
-                        <button class="btn btn-primary cart-btn" data-id="{{$product->id}}">Add To Cart</button>
+                        <button class="btn btn-primary cart-btn product_id" data-id="{{$product->id}}">Add To Cart</button>
                     </div>
                 </div>
             </div>

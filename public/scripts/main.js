@@ -18,12 +18,16 @@ function buyNow(event) {
         const parentTarget = event.target.closest('.card')
         const price_id = parentTarget.querySelector('.price').getAttribute('data-stripe_price_id')
         const quantity = parentTarget.querySelector('.quantity').textContent;
+        const price = parentTarget.querySelector('.price').innerHTML;
+        const productID = parentTarget.querySelector('.product_id').getAttribute('data-id')
         const csrf_token = document.getElementById('csrfToken').content;
 
         // console.log([price_id, quantity])
         const data ={
             'price_id': price_id,
-            'quantity': quantity
+            'quantity': quantity,
+            'price': price,
+            'productID': productID
         }
 
         const url = 'product-checkout'

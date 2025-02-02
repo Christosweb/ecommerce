@@ -31,7 +31,7 @@
                         </div>
 
                         <div class="flex gap-5">
-                        <button class="btn btn-primary delete" data-stripe_price_id="{{$cart->stripe_price_id}}">delete</button>
+                        <button class="btn btn-primary delete product_id" data-id="{{$cart->stripe_product_id}}" data-stripe_price_id="{{$cart->stripe_price_id}}">delete</button>
                         <button class="btn btn-primary buy" data-price="{{$cart->stripe_price_id}}">buy now</button>
                         </div>
                     </div>
