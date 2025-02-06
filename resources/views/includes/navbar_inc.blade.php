@@ -22,7 +22,7 @@
     @endif
 
     @if (Auth::user())
-    <button class="btn btn-primary" type='submit'><a href="#">profile</a></button>
+    <button class="btn btn-primary" type='submit'><a href="{{ route('profile.edit') }}">profile</a></button>
     @endif
     </div>
 </div>

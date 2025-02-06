@@ -48,6 +48,9 @@
                                 {{ __('Log Out') }}
                             </x-dropdown-link>
                         </form>
+                        <x-dropdown-link :href="route('order')">
+                            {{ __('Order history') }}
+                        </x-dropdown-link>
                     </x-slot>
                 </x-dropdown>
             </div>

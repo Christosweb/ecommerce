@@ -40,7 +40,7 @@
             </div>
             @endforeach
         </div>
-
+        <div class="link">{{$products->links()}}</div>
     </main>
     <!-- main end -->
 

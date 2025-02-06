@@ -30,7 +30,7 @@ function buyNow(event) {
             'productID': productID
         }
 
-        const url = 'product-checkout'
+        const url = '/product-checkout'
         async function buyNowRequest() {
 
             let request = await fetch(url, {
@@ -100,6 +100,29 @@ function addToCart(event) {
 }
 
 
+function countCart() {
+    const csrf_token = document.getElementById('csrfToken').content;
+    window.addEventListener('load', () => {
+        // console.log('yes')
+        async function getCartCount() {
+
+            const url = '/count-cart'
+            let request = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': csrf_token,
+                },
+            });
+            
+            let response = await request.text();
+
+            localStorage.setItem('numberOfCart', response)
+           
+            
+        } getCartCount()
+    })
+}countCart()
 
 
 

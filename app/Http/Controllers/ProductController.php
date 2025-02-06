@@ -23,7 +23,7 @@ class ProductController extends Controller
       session(['user_session' => $session_id], 60 * 24 * 30);
     }
 
-    $products = Product::paginate(15);
+    $products = Product::simplePaginate(6);
     return view('product.index', ['products' => $products]);
   }
   public function getSlug($slug)
@@ -148,5 +148,11 @@ class ProductController extends Controller
   public function cancel()
   {
     return view('product.cancel');
+  }
+
+  public function orderHistory(){
+    $orderHistory = Order::where('user_id', Auth::user()->id)->get();
+    // return $orderHistory;
+     return view('product.order', ['orderHistory'=>$orderHistory]);
   }
 }

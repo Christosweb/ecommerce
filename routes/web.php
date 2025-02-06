@@ -22,12 +22,15 @@ Route::get('/product/{slug}', [ProductController::class, 'getSlug'])->name('type
 Route::delete('/product/{id}/delete', [ProductController::class, 'destroy']);
 //calculate cart price
 Route::post('/product/cart/prices', [cartController::class, 'calculatePrices']);
+//cart number
+Route::post('/count-cart', [cartController::class, 'getNumberOfAddedCart']);
 //update quantity column in cart database
 Route::patch('/product/cart/quantity/update', [cartController::class, 'updateQuantity']);
 // stripe webhook 
 // Route::post('/stripe/webhook', [stripeWebhookController::class, 'handleWebhook']);
 
 Route::get('/success', [ProductController::class, 'success'])->name('success');
+Route::get('/order', [ProductController::class, 'orderHistory'])->name('order');
 
 Route::get('/cancel', [ProductController::class, 'cancel'])->name('cancel');
 
