@@ -41,7 +41,7 @@ class paymentController extends Controller
 
             $checkout = $request->user()->checkout($line_items, [
                 'success_url' => route('success') . '?session_id={CHECKOUT_SESSION_ID}',
-                'cancel_url' => route('cancel'),
+                'cancel_url' => route('products'),
                 'metadata' => ['order_id' => session('user_session')],
             ]);
             return response()->json(['redirect_url' => $checkout->url], 200);
@@ -55,7 +55,7 @@ class paymentController extends Controller
         //    return $line_items;
         $checkout = Checkout::guest()->create($line_items, [
             'success_url' => route('success'),
-            'cancel_url' => route('cancel'),
+            'cancel_url' => route('products'),
         ]);
         return response()->json(['redirect_url' => $checkout->url], 200);
     }
@@ -75,7 +75,7 @@ class paymentController extends Controller
 
                 $checkout = Checkout::guest()->create($line_items, [
                     'success_url' => route('success'),
-                    'cancel_url' => route('cancel'),
+                    'cancel_url' => route('products'),
                 ]);
                 return response()->json(['redirect_url' => $checkout->url], 200);
             } catch (Exception $e) {
